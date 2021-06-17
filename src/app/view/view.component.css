@@ -1,0 +1,11 @@
+.container{
+    margin-left: 30%;
+    margin-top: 12%;
+}
+table,th,tr{
+    border: 1px solid black;
+    width: 25%;
+}
+h1{
+    color: blueviolet;
+}

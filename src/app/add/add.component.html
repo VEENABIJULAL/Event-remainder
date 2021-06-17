@@ -5,10 +5,10 @@
             <div class="main">
                 <h4>Event Remainder</h4><br>
             <form (ngSubmit)="save()">
-            <input type="text" placeholder="Enter Date"   class="text" [(ngModel)]="date" name="date" ><br><br>
+            <input type="text" placeholder="Enter Date"   class="text" [(ngModel)]="edate" name="date" ><br><br>
          
 
-            <input type="password" placeholder="Enter Event" class="text" name="event" [(ngModel)]="event"><br><br>
+            <input type="text" placeholder="Enter Event" class="text" name="event" [(ngModel)]="edetails"><br><br>
            
             <input type="submit" value="Save"  class="button butefct"><br><br>
             <input type="button" value="View Event" (click)="view()" class="button butefct"><br>

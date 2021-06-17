@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-add',
@@ -7,16 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-  date="";
-  event="";
+  edate="";
+  edetails="";
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private dataservice:DataService) { }
 
 
   ngOnInit(): void {
   }
   save(){
-    alert("event saved");
+    var edate=this.edate;
+    var edetails=this.edetails;
+    const result=this.dataservice.save(edate,edetails)
+    if(result){
+      alert("event saved");
+
+    }
+    else{
+      alert("Invalid form");
+    }
 
   }
   view(){

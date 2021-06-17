@@ -4,11 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
+  currentid="";
   accountdetails:any={
-    1000:{userid:1000,username:"userone",password:"userone",date:10/6/2021,event:"company meeting"},
-    1001:{userid:1001,username:"usertwo",password:"usertwo",date:15/6/2021,event:"treat to friends"},
-    1002:{userid:1002,username:"userthree",password:"userthree",date:20/7/2021,event:"project submition"},
-    1003:{userid:1003,username:"userfour",password:"userfour",date:25/7/2021,event:"interview date"}
+    1000:{userid:1000,username:"userone",password:"userone",eventdetails:[]},
+    1001:{userid:1001,username:"usertwo",password:"usertwo",eventdetails:[]},
+    1002:{userid:1002,username:"userthree",password:"userthree",eventdetails:[]},
+    1003:{userid:1003,username:"userfour",password:"userfour",eventdetails:[]}
   }
 
   constructor() { }
@@ -21,9 +22,7 @@ export class DataService {
       user[id]={
         userid:id,
         username:uname,
-        password:pswd,
-        date:0,
-        event:""
+        password:pswd
       }
       return true;
       
@@ -34,6 +33,7 @@ export class DataService {
     let users=this.accountdetails;
    if(id in users){
      if(pswd==users[id]["password"]){
+       this.currentid=id;
        return true;
      }
      else{
@@ -46,4 +46,22 @@ export class DataService {
      return false;
    }
   }
+
+  save(edate:any,edetails:any){
+    if(this.currentid){
+      let users=this.accountdetails;
+      let uid=this.currentid;
+      console.log(uid);
+      
+      users[uid].eventdetails.push({edate:edate,edetails:edetails})
+      console.log(users);
+      
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  
 }
