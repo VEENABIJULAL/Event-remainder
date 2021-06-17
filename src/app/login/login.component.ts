@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 text="Login form";
-uid="User-Id please";
+id="User-Id please";
 pswd="";
 
 accountdetails:any={
@@ -32,10 +32,10 @@ accountdetails:any={
   //  console.log(this.pswd);
     
   //}
- login(i:any,p:any){
-   var id=i.value;
+ login(){
+   var id=this.id;
    
-   var pswd=p.value;
+   var pswd=this.pswd;
    let users=this.accountdetails;
    if(id in users){
      if(pswd==users[id]["password"]){
