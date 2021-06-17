@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -18,7 +19,7 @@ accountdetails:any={
   1002:{userid:1002,username:"userthree",password:"userthree",date:20/7/2021,event:"project submition"},
   1003:{userid:1003,username:"userfour",password:"userfour",date:25/7/2021,event:"interview date"}
 }
-  constructor(){}
+  constructor(private router:Router){}
   ngOnInit(): void {
   }
 
@@ -40,6 +41,7 @@ accountdetails:any={
    if(id in users){
      if(pswd==users[id]["password"]){
        alert("login success");
+       this.router.navigateByUrl("dasboard");
      }
      else{
        alert("incorrct password")
@@ -48,6 +50,9 @@ accountdetails:any={
    else{
      alert("invalid userid")
    }
+ }
+ register(){
+   this.router.navigateByUrl("register");
  }
   
 }

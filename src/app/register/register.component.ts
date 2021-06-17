@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  uname="";
+  id="";
+  pswd="";
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  register(){
+    alert("register clicked");
   }
 
 }

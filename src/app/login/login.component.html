@@ -3,17 +3,17 @@
         <div class="col-4"></div>
         <div class="col-4">
             <div class="main">
-                <h4>Event Remainder<br>
-                <h5>{{text}}</h5></h4>
+                <h4>Event Remainder<br><br>
+                <h5>{{text}}</h5></h4><br>
             <form>
             <input type="text" placeholder="User Id"  [value]="id" class="text" [(ngModel)]="id" name="Id" ><br><br>
          
 
             <input type="password" placeholder="password" class="text" name="pswd" [(ngModel)]="pswd"><br><br>
            
-            <input type="button" value="Login"   (click)="login()" class="button butefct"><br>
-            <a href="">Forgot password?</a><br>
-            <input type="button" value="Create New Account"  class="button butefct"><br>
+            <input type="button" value="Login"   (click)="login()" class="button butefct"><br><br>
+            <a href="" routerLink="register">Forgot password?</a><br><br>
+            <input type="button" value="Create New Account" (click)="register()" class="button butefct"><br>
             </form>    
             
             </div>
