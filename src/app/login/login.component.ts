@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 text="Login form";
-id="User-Id please";
+uid="User-Id please";
 pswd="";
 
 accountdetails:any={
@@ -22,19 +22,20 @@ accountdetails:any={
   ngOnInit(): void {
   }
 
-  idchange(event:any){
-    this.id=event.target.value;
-    console.log(this.id);
+  //idchange(event:any){
+  //  this.id=event.target.value;
+  //  console.log(this.id);
     
-  }
-  pswdchange(event:any){
-    this.pswd=event.target.value;
-    console.log(this.pswd);
+  //}
+  //pswdchange(event:any){
+  //  this.pswd=event.target.value;
+  //  console.log(this.pswd);
     
-  }
- login(){
-   var id=this.id;
-   var pswd=this.pswd;
+  //}
+ login(i:any,p:any){
+   var id=i.value;
+   
+   var pswd=p.value;
    let users=this.accountdetails;
    if(id in users){
      if(pswd==users[id]["password"]){
