@@ -2,21 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class AddComponent implements OnInit {
+  date="";
+  event="";
 
   constructor(private router:Router) { }
 
+
   ngOnInit(): void {
   }
-  add(){
-    this.router.navigateByUrl("add");
+  save(){
+    alert("event saved");
+
   }
   view(){
     this.router.navigateByUrl("view");
+
   }
 
 }
