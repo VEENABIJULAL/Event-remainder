@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="main">
+                <h4>Event Remainder<br>
+                <h5>{{text}}</h5></h4>
+            <form>
+            <input type="text" placeholder="User Id"  [value]="id" class="text" (change)="idchange($event)" name="Id" ><br><br>
+         
+
+            <input type="password" placeholder="password" class="text" name="pswd" (change)="pswdchange($event)"><br><br>
+           
+            <input type="button" value="Login"   (click)="login()" class="button butefct"><br>
+            <a href="">Forgot password?</a><br>
+            <input type="button" value="Create New Account"  class="button butefct"><br>
+            </form>    
+            
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
