@@ -7,10 +7,17 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Edate</th>
-                                <th>Edetails</th>
+                                <th class="date">Date</th>
+                                <th class="details">Details</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr *ngFor="let result of results">
+                                <td>{{result["edate"]}}</td>
+                                <td>{{result["edetails"]}}</td>
+
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

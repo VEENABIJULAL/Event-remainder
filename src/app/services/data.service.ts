@@ -54,12 +54,22 @@ export class DataService {
       console.log(uid);
       
       users[uid].eventdetails.push({edate:edate,edetails:edetails})
-      console.log(users);
+      console.log(users[uid].eventdetails);
+      
       
       return true;
     }
     else{
       return false;
+    }
+  }
+  view(){
+    if(this.currentid){
+      let users=this.accountdetails;
+      let uid=this.currentid;
+      console.log(users[uid].eventdetails);
+      
+      return(users[uid].eventdetails)      
     }
   }
 

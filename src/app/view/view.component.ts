@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-view',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent implements OnInit {
-
-  constructor() { }
+  results="";
+  constructor(private dataservice:DataService,private router:Router) { 
+    this.results=this.dataservice.view();
+  }
 
   ngOnInit(): void {
   }
